@@ -1,7 +1,7 @@
 import { IoLogOutOutline } from 'react-icons/io5'
 import { useRouter } from 'next/router'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { auth } from '../../../types/auth'
+import { auth } from '../../types/auth'
 
 const Header = () => {
   const router = useRouter()

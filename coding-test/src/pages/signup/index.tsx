@@ -9,8 +9,8 @@ import { Controller, useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { firestore, storage } from 'types/auth'
-import { auth } from 'types/auth'
+import { firestore, storage } from 'src/types/auth'
+import { auth } from 'src/types/auth'
 import { getDownloadURL, ref, uploadBytes } from '@firebase/storage'
 
 type FormValues = {

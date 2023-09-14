@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { auth, firestore, storage } from 'types/auth'
+import { auth, firestore, storage } from 'src/types/auth'
 import Header from '@/components/template/header'
 import { collection, doc, getDoc } from '@firebase/firestore'
 import { DocumentData } from 'firebase/firestore'
