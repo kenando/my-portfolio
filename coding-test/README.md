@@ -2,5 +2,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+# 開発サーバーの起動
 yarn dev
+
+# フォーマット
+yarn fmt
 
