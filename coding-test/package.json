@@ -1,0 +1,42 @@
+{
+  "name": "coding-test",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "fmt": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
+    "fmt:check": "eslint-config-prettier 'src/**/*.{js,jsx,ts,tsx}'"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@firebase/app": "^0.9.17",
+    "@firebase/auth": "^1.3.0",
+    "@firebase/firestore": "^4.1.2",
+    "@mui/icons-material": "^5.14.8",
+    "@react-icons/all-files": "^4.1.0",
+    "@types/node": "20.5.7",
+    "@types/react": "18.2.21",
+    "@types/react-dom": "18.2.7",
+    "clsx": "^2.0.0",
+    "eslint": "8.48.0",
+    "eslint-config-next": "13.4.19",
+    "firebase": "^10.3.1",
+    "next": "13.4.19",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-firebase-hooks": "^5.1.1",
+    "react-hook-form": "^7.45.4",
+    "react-icons": "^4.11.0",
+    "react-toastify": "^9.1.3",
+    "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^6.7.0",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.0.3"
+  }
+}
