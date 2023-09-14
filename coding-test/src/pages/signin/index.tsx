@@ -4,6 +4,7 @@ import { signInWithEmailAndPassword } from '@firebase/auth'
 import { auth } from '../../../types/auth'
 import { useRouter } from 'next/router'
 import Link from "next/link";
+import {FirebaseError} from "@firebase/app";
 
 type FormValues = {
   email: string
@@ -18,13 +19,32 @@ const SignInForm = () => {
   } = useForm<FormValues>()
   const router = useRouter()
   const handleSignin = async (data: FormValues) => {
-    signInWithEmailAndPassword(auth, data.email, data.password)
-      .then((res) => {
-        router.push('/top')
-      })
-      .catch((err) => {
-        console.log(err.message)
-      })
+    try {
+      await signInWithEmailAndPassword(auth, data.email, data.password)
+      await router.push('/top')
+    } catch(e){
+      if (e instanceof FirebaseError) {
+        switch (e.code) {
+          case 'auth/invalid-email':
+            alert('メールアドレスが不正です。')
+            break
+          case 'auth/user-disabled':
+            alert('アカウントが無効です。')
+            break
+          case 'auth/user-not-found':
+            alert('アカウントが見つかりませんでした。')
+            break
+          case 'auth/wrong-password':
+            alert('パスワードが間違っています。')
+            break
+          default:
+            alert('ログインに失敗しました。')
+        }
+      } else {
+        alert('ログインに失敗しました。')
+      }
+    }
+
   }
   return (
     <div className="Sign-In-Box">
