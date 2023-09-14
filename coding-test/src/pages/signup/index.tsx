@@ -9,8 +9,8 @@ import { Controller, useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import {firestore, storage} from "../../../types/auth";
-import {auth} from "../../../types/auth";
+import {firestore, storage} from "types/auth";
+import {auth} from "types/auth";
 import {getDownloadURL, ref, uploadBytes} from "@firebase/storage";
 
 type FormValues = {
@@ -84,7 +84,6 @@ const SignUpForm = () => {
             break
         }
       } else {
-        console.log(e)
         alert('エラーが発生しました。もう一度お試しください。')
       }
     }

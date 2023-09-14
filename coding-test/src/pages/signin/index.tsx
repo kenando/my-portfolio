@@ -1,7 +1,7 @@
 import { Controller, useForm } from 'react-hook-form'
 import React from 'react'
 import { signInWithEmailAndPassword } from '@firebase/auth'
-import { auth } from '../../../types/auth'
+import { auth } from 'types/auth'
 import { useRouter } from 'next/router'
 import Link from "next/link";
 import {FirebaseError} from "@firebase/app";

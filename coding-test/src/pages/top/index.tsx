@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import {auth, firestore, storage} from '../../../types/auth'
+import {auth, firestore, storage} from 'types/auth'
 import Header from '@/components/template/header'
 import { collection, doc, getDoc } from '@firebase/firestore'
 import { DocumentData } from 'firebase/firestore'
@@ -61,7 +61,6 @@ const TopPage = () => {
                         className='Icon'
                         src={iconUrl}
                         alt="ユーザーアイコン"
-                        style={{ maxWidth: '100px', maxHeight: '100px' }}
                     />
                 )}
             </div>
