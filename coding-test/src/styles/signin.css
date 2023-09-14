@@ -1,0 +1,47 @@
+.Sign-In-Box {
+  align-items: center;
+  text-align: center;
+  padding: 0 40px;
+  width: 350px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  margin: 150px auto;
+}
+.Sign-In-Title {
+  font-size: 24px;
+  text-align: center;
+}
+.Input-Label {
+  display: inline-block;
+  text-align: left;
+  width: 270px;
+  margin: 0 10px 5px 0;
+}
+.Input-Box {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.Sign-In-Button {
+  width: 87%;
+  padding: 10px;
+  margin: 10px 5px 10px 10px;
+  background-color: rgba(5, 87, 204, 0.8);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.Link-Reset-Password {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.Input-Error-Message {
+  font-size: 6px;
+  color: red;
+  text-align: left;
+  padding-left: 40px;
+}
