@@ -1,4 +1,18 @@
-.Hello-Message {
+.Container{
+  display: flex;
+  align-items: center;
   text-align: center;
-  margin-top: 50px;
+    position: fixed;
+    top: 10%;
+    left: 40%;
+}
+.Hello-Message {
+    margin-top: 50px;
+}
+.Icon{
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    margin-top:15px;
+    margin-left: 15px;
 }

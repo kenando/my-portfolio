@@ -11,6 +11,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import {firestore, storage} from "../../../types/auth";
 import {auth} from "../../../types/auth";
+import {getDownloadURL, ref, uploadBytes} from "@firebase/storage";
 
 type FormValues = {
   email: string
@@ -54,17 +55,17 @@ const SignUpForm = () => {
       )
       await sendEmailVerification(userCredential.user)
       const docRef = doc(firestore, 'users', userCredential.user.uid)
+
+      //iconをstorageにアップロード
+      const storageRef = ref(storage,`images/${data.icon.name}`)
+      await uploadBytes(storageRef, data.icon)
+      const url = await getDownloadURL(storageRef)
       const signupData = {
         username: data.username,
-        icon: data.icon,
         birthdate: data.birthdate,
         sex: data.sex,
+        url: url,
       }
-      // iconをstorageにアップロード
-      // const storageRef = ref(storage,`images/${data.icon.name}`)
-      // uploadBytes(storageRef, data.icon).then((snapshot) => {
-      //   console.log('アップロードが完了しました。');
-      // });
       await setDoc(docRef, signupData)
       toast('登録が完了しました。')
       await router.push('/top')
@@ -83,6 +84,7 @@ const SignUpForm = () => {
             break
         }
       } else {
+        console.log(e)
         alert('エラーが発生しました。もう一度お試しください。')
       }
     }
