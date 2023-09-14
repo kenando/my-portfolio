@@ -9,9 +9,9 @@ import { Controller, useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import {firestore, storage} from "types/auth";
-import {auth} from "types/auth";
-import {getDownloadURL, ref, uploadBytes} from "@firebase/storage";
+import { firestore, storage } from 'types/auth'
+import { auth } from 'types/auth'
+import { getDownloadURL, ref, uploadBytes } from '@firebase/storage'
 
 type FormValues = {
   email: string
@@ -57,7 +57,7 @@ const SignUpForm = () => {
       const docRef = doc(firestore, 'users', userCredential.user.uid)
 
       //iconをstorageにアップロード
-      const storageRef = ref(storage,`images/${data.icon.name}`)
+      const storageRef = ref(storage, `images/${data.icon.name}`)
       await uploadBytes(storageRef, data.icon)
       const url = await getDownloadURL(storageRef)
       const signupData = {
@@ -160,12 +160,17 @@ const SignUpForm = () => {
           name="icon"
           control={control}
           render={({ field }) => (
-            <input type="file" className="Input-Box"  accept="image/*" onChange={(e) => {
-              const selectedFile = e.target.files?.[0]; // Optional chainingを使用
-              if (selectedFile) {
-                field.onChange(selectedFile);
-              }
-            }}/>
+            <input
+              type="file"
+              className="Input-Box"
+              accept="image/*"
+              onChange={(e) => {
+                const selectedFile = e.target.files?.[0] // Optional chainingを使用
+                if (selectedFile) {
+                  field.onChange(selectedFile)
+                }
+              }}
+            />
           )}
           rules={{ required: 'アイコンは必須です。' }}
         />

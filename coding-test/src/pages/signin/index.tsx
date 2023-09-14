@@ -3,8 +3,8 @@ import React from 'react'
 import { signInWithEmailAndPassword } from '@firebase/auth'
 import { auth } from 'types/auth'
 import { useRouter } from 'next/router'
-import Link from "next/link";
-import {FirebaseError} from "@firebase/app";
+import Link from 'next/link'
+import { FirebaseError } from '@firebase/app'
 
 type FormValues = {
   email: string
@@ -22,7 +22,7 @@ const SignInForm = () => {
     try {
       await signInWithEmailAndPassword(auth, data.email, data.password)
       await router.push('/top')
-    } catch(e){
+    } catch (e) {
       if (e instanceof FirebaseError) {
         switch (e.code) {
           case 'auth/invalid-email':
@@ -44,7 +44,6 @@ const SignInForm = () => {
         alert('ログインに失敗しました。')
       }
     }
-
   }
   return (
     <div className="Sign-In-Box">
